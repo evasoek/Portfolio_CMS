@@ -49,6 +49,13 @@
 				<?php echo $this->Html->link('CMS', ['controller' => 'Pages', 'action' => 'home'], ['class' => 'navbar-brand']); ?>
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
+				<!--
+				alleen tonen indien ingelogd en geauthoriseerd
+				<ul class="nav navbar-nav">
+					<li><a href="#">Nieuw portfolio item</a></li>
+					<li><a href="#">Beheer account</a></li>
+				</ul>
+				-->
 				<ul class="nav navbar-nav navbar-right">
 					<li><?php echo $this->Html->link('Login', ['controller' => 'Users', 'action' => 'login']); ?></li>
 					<li><?php echo $this->Html->link('Register', ['controller' => 'Users', 'action' => 'register']); ?></li>
