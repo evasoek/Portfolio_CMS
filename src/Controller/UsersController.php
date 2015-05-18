@@ -53,5 +53,8 @@
 		    return $this->redirect($this->Auth->logout());
 		}
 	
+                public function admin() {
+
+                }
 	}
 ?>

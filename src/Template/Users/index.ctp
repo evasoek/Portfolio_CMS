@@ -5,7 +5,7 @@
 			<select>
 				<?php
 					foreach ($users as $user) {
-						echo '<option value="'. $user->username .'">'. $user->username .'</option>';
+						echo '<option value="'. $user->ID .'">'. $user->username .' (' . $user->firstname . ' ' . $user->lastname . ')</option>';
 					}
 				?>
 			</select>

@@ -8,13 +8,10 @@
 		
 	    public function validationDefault(Validator $validator) {
 	        return $validator
+	            ->notEmpty('firstname', 'A first name is required')
+	            ->notEmpty('lastname', 'A last name is required')
 	            ->notEmpty('username', 'A username is required')
-	            ->notEmpty('password', 'A password is required')
-	            ->notEmpty('role', 'A role is required')
-	            ->add('role', 'inList', [
-	                'rule' => ['inList', ['admin', 'author']],
-	                'message' => 'Please enter a valid role'
-	            ]);
+                    ->notEmpty('username', 'A username is required');
 	    }
 	
 	}

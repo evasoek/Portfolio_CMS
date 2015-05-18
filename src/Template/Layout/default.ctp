@@ -53,7 +53,12 @@
                         <li><?php echo $this->Html->link('About', ['controller' => 'Pages', 'action' => 'display', 'about']); ?></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
+                        <?php if (!$authUser) { ?>
                         <li><?php echo $this->Html->link('Login', ['controller' => 'Users', 'action' => 'login']); ?></li>
+                        <?php } else { ?>
+                        <li><?php echo $this->Html->link('Admin panel', ['controller' => 'Users', 'action' => 'admin']); ?></li>
+                        <li><?php echo $this->Html->link('Logout', ['controller' => 'Users', 'action' => 'logout']); ?></li>
+                        <?php } ?>
                         <li><?php echo $this->Html->link('Register', ['controller' => 'Users', 'action' => 'register']); ?></li>
                     </ul>
                 </div>
