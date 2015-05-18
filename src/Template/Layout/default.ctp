@@ -15,65 +15,61 @@
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-	<?= $this->Html->charset() ?>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>
-	    <?= $this->fetch('title') ?>
-	</title>
-	<?= $this->Html->meta('icon') ?>
-	
-	<?= $this->Html->css('style.css') ?>
-	<?= $this->Html->css('bootstrap.css') ?>
-	
-	<?= $this->Html->script('https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js') ?>
-	<?= $this->Html->script('bootstrap.js') ?>
-	<?= $this->Html->script('npm.js') ?>
-	<?= $this->Html->script('classes.js') ?>
-	
-	<?= $this->fetch('meta') ?>
-	<?= $this->fetch('css') ?>
-	<?= $this->fetch('script') ?>
-</head>
-<body>
-	<!-- Fixed navbar -->
-	<nav class="navbar navbar-default navbar-fixed-top">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				</button>
-				<?php echo $this->Html->link('CMS', ['controller' => 'Pages', 'action' => 'home'], ['class' => 'navbar-brand']); ?>
-			</div>
-			<div id="navbar" class="collapse navbar-collapse">
-				<!--
-				alleen tonen indien ingelogd en geauthoriseerd
-				<ul class="nav navbar-nav">
-					<li><a href="#">Nieuw portfolio item</a></li>
-					<li><a href="#">Beheer account</a></li>
-				</ul>
-				-->
-				<ul class="nav navbar-nav navbar-right">
-					<li><?php echo $this->Html->link('Login', ['controller' => 'Users', 'action' => 'login']); ?></li>
-					<li><?php echo $this->Html->link('Register', ['controller' => 'Users', 'action' => 'register']); ?></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	
-	<!-- Begin page content -->
-	<div class="container">
-		<?= $this->Flash->render() ?>
-		<?= $this->fetch('content') ?>
-	</div>
-	
-	<footer class="footer">
-		<div class="container">
-			<p class="text-muted">CMS INF-I Practicum</p>
-		</div>
-	</footer>
-</body>
+    <head>
+        <?= $this->Html->charset() ?>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            <?= $this->fetch('title') ?>
+        </title>
+        <?= $this->Html->meta('icon') ?>
+
+        <?= $this->Html->css('style.css') ?>
+        <?= $this->Html->css('bootstrap.css') ?>
+
+        <?= $this->Html->script('https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js') ?>
+        <?= $this->Html->script('bootstrap.js') ?>
+        <?= $this->Html->script('npm.js') ?>
+        <?= $this->Html->script('classes.js') ?>
+
+        <?= $this->fetch('meta') ?>
+        <?= $this->fetch('css') ?>
+        <?= $this->fetch('script') ?>
+    </head>
+    <body>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <?php echo $this->Html->link('CMS', ['controller' => 'Users', 'action' => 'index'], ['class' => 'navbar-brand']); ?>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><?php echo $this->Html->link('About', ['controller' => 'Pages', 'action' => 'display', 'about']); ?></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><?php echo $this->Html->link('Login', ['controller' => 'Users', 'action' => 'login']); ?></li>
+                        <li><?php echo $this->Html->link('Register', ['controller' => 'Users', 'action' => 'register']); ?></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Begin page content -->
+        <div class="container">
+            <?= $this->Flash->render() ?>
+            <?= $this->fetch('content') ?>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <p class="text-muted">CMS INF-I Practicum</p>
+            </div>
+        </footer>
+    </body>
 </html>
