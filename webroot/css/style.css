@@ -5,12 +5,54 @@ html {
 }
 
 body {
+	padding-top: 100px;
 	margin-bottom: 60px;
 }
 
 body > .container {
 	padding-top: 60px;
 }
+
+a:hover {
+	text-decoration: none;
+}
+
+h1 {
+	font-weight: normal;
+}
+
+/* sidebar */
+.sidebar h2 {
+	color: rgba(0,0,0,0.7);
+	font-size: 1.2em;
+	text-transform: uppercase;
+}
+
+.sidebar ul.menu {
+	padding: 0;
+}
+
+	.sidebar ul.menu li {
+		list-style: none;
+	}
+	
+		.sidebar ul.menu li a {
+			display: block;
+			padding: 7px 15px;
+			margin-bottom: 1px;
+			border-radius: 4px;
+			background-color: rgba(0,0,0,0.07);
+			color: rgba(0,0,0,0.7);
+			
+			-webkit-transition: background-color 200ms linear;
+		    -moz-transition: background-color 200ms linear;
+		    -o-transition: background-color 200ms linear;
+		    transition: background-color 200ms linear;
+		}
+		
+		.sidebar ul.menu li a:hover {
+			background-color: rgba(0,0,0,0.1);
+		}
 
 /* === authorisation === */
 .auth {

@@ -47,6 +47,7 @@ class AppController extends Controller {
                 'action' => 'index'
             ]
         ]);
+        
         $this->set('authUser', $this->Auth->user());
     }
 

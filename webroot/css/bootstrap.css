@@ -1106,7 +1106,6 @@ a {
 a:hover,
 a:focus {
   color: #23527c;
-  text-decoration: underline;
 }
 a:focus {
   outline: thin dotted;
@@ -1227,6 +1226,7 @@ h2,
 .h2,
 h3,
 .h3 {
+  margin-top: 0;
   margin-bottom: 10px;
 }
 h1 small,
@@ -1249,6 +1249,7 @@ h5,
 .h5,
 h6,
 .h6 {
+  margin-top: 0;
   margin-bottom: 10px;
 }
 h4 small,

@@ -23,8 +23,8 @@
         </title>
         <?= $this->Html->meta('icon') ?>
 
-        <?= $this->Html->css('style.css') ?>
         <?= $this->Html->css('bootstrap.css') ?>
+        <?= $this->Html->css('style.css') ?>
 
         <?= $this->Html->script('https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js') ?>
         <?= $this->Html->script('bootstrap.js') ?>
@@ -37,7 +37,7 @@
     </head>
     <body>
         <!-- Fixed navbar -->
-        <nav class="navbar navbar-default navbar-fixed-top">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -55,11 +55,11 @@
                     <ul class="nav navbar-nav navbar-right">
                         <?php if (!$authUser) { ?>
                         <li><?php echo $this->Html->link('Login', ['controller' => 'Users', 'action' => 'login']); ?></li>
+                        <li><?php echo $this->Html->link('Register', ['controller' => 'Users', 'action' => 'register']); ?></li>
                         <?php } else { ?>
                         <li><?php echo $this->Html->link('Admin panel', ['controller' => 'Users', 'action' => 'admin']); ?></li>
                         <li><?php echo $this->Html->link('Logout', ['controller' => 'Users', 'action' => 'logout']); ?></li>
                         <?php } ?>
-                        <li><?php echo $this->Html->link('Register', ['controller' => 'Users', 'action' => 'register']); ?></li>
                     </ul>
                 </div>
             </div>
@@ -73,7 +73,7 @@
 
         <footer class="footer">
             <div class="container">
-                <p class="text-muted">CMS INF-I Practicum</p>
+                <p class="text-muted">&copy; <?php echo date('Y'); ?> | CMS INF-I Practicum | groep 6</p>
             </div>
         </footer>
     </body>

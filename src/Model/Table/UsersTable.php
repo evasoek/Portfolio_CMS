@@ -6,12 +6,28 @@
 	
 	class UsersTable extends Table {
 		
+		$this->hasMany('Interests', [
+			'foreignKey' => 'userID'
+		]);
+		
+		$this->hasMany('SocialLinks', [
+			'foreignKey' => 'userID'
+		]);
+		
+		$this->hasMany('Projects', [
+			'foreignKey' => 'userID'
+		]);
+		
+		$this->hasMany('Skills', [
+			'foreignKey' => 'userID'
+		]);
+		
 	    public function validationDefault(Validator $validator) {
 	        return $validator
-	            ->notEmpty('firstname', 'A first name is required')
-	            ->notEmpty('lastname', 'A last name is required')
-	            ->notEmpty('username', 'A username is required')
-                    ->notEmpty('username', 'A username is required');
+				->notEmpty('firstname', 'A first name is required')
+				->notEmpty('lastname', 'A last name is required')
+				->notEmpty('username', 'A username is required')
+				->notEmpty('username', 'A username is required');
 	    }
 	
 	}

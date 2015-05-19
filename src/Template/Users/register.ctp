@@ -5,7 +5,7 @@
 				<h1><?= __('Register User') ?></h1>
 				<?= $this->Form->input('username') ?>
 				<?= $this->Form->input('password') ?>
-                                <?= $this->Form->input('firstname', ['label' => 'First name']) ?>
+                <?= $this->Form->input('firstname', ['label' => 'First name']) ?>
 				<?= $this->Form->input('lastname', ['label' => 'Last name']) ?>
 				<?= $this->Form->button(__('Submit')); ?>
 			<?= $this->Form->end() ?>
