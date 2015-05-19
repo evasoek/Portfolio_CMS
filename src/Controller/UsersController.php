@@ -12,10 +12,19 @@
 	        $this->Auth->allow(['register', 'logout']);
 	    }
 	
+		/** 
+		 * Index view.
+		 * Hierin worden alle gebruikers getoond
+		 */
 	    public function index() {
 	        $this->set('users', $this->Users->find('all'));
 	    }
 	
+		/** 
+		 * Individuele user view.
+		 * Hierin wordt het portfolio van een specifieke gebruiker getoond
+		 * @param int ID - dit is de user ID
+		 */
 	    public function view($id) {
 	        if (!$id) {
 	            throw new NotFoundException(__('Invalid user'));
@@ -25,6 +34,10 @@
 	        $this->set(compact('user'));
 	    }
 	
+		/** 
+		 * Register view
+		 * Hierin kan een user zich registreren
+		 */
 	    public function register() {
 	        $user = $this->Users->newEntity();
 	        if ($this->request->is('post')) {
@@ -38,6 +51,10 @@
 	        $this->set('user', $user);
 	    }
 	    
+	    /** 
+		 * Login view.
+		 * Hierin kan de gebruiker inloggen
+		 */
 	    public function login() {
 		    if ($this->request->is('post')) {
 		        $user = $this->Auth->identify();
@@ -49,12 +66,26 @@
 		    }
 		}
 		
+		/** 
+		 * Logout
+		 * De functie voor het uitloggen van een gebruiker en de volgende re-direct
+		 */
 		public function logout() {
 		    return $this->redirect($this->Auth->logout());
 		}
 	
-        public function admin() {
-
+		/** 
+		 * Admin view
+		 * Hierin wordt de admin view getoond van de ingelogde gebruiker
+		 * @param int ID - dit is de user ID
+		 */
+        public function admin($id) {
+			if (!$id) {
+	            throw new NotFoundException(__('Invalid user'));
+	        }
+	
+	        $user = $this->Users->get($id);
+	        $this->set(compact('user'));
         }
 	}
 ?>

@@ -57,7 +57,7 @@
                         <li><?php echo $this->Html->link('Login', ['controller' => 'Users', 'action' => 'login']); ?></li>
                         <li><?php echo $this->Html->link('Register', ['controller' => 'Users', 'action' => 'register']); ?></li>
                         <?php } else { ?>
-                        <li><?php echo $this->Html->link('Admin panel', ['controller' => 'Users', 'action' => 'admin']); ?></li>
+                        <li><?php echo $this->Html->link('Admin panel', ['controller' => 'Users', 'action' => 'admin', $authUser['id']]); ?></li>
                         <li><?php echo $this->Html->link('Logout', ['controller' => 'Users', 'action' => 'logout']); ?></li>
                         <?php } ?>
                     </ul>
