@@ -7,6 +7,11 @@
 	
 	class ProjectsController extends AppController {
 	
-	   
+		/**
+		 * Voeg een project toe aan het portfolio
+		 */
+		public function add() {
+			
+		}
 	}
 ?>

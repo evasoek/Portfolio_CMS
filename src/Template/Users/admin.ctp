@@ -7,7 +7,7 @@
 		
 		<h2>Menu</h2>
 		<ul class="menu">
-			<li><?php echo $this->Html->link('Add portfolio Item', ['controller' => 'Portfolio', 'action' => 'add']); ?></li>
+			<li><?php echo $this->Html->link('Add portfolio Item', ['controller' => 'Projects', 'action' => 'add']); ?></li>
 			<li><?php echo $this->Html->link('Edit profile', ['controller' => 'Users', 'action' => 'edit']); ?></li>
 			<li><?php echo $this->Html->link('Delete account', ['controller' => 'Users', 'action' => 'delete']); ?></li>
 		</ul>
