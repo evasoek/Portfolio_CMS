@@ -24,7 +24,7 @@
 		    
 		    foreach ($users as $user) {
 			    $list .= '
-			    	<li><a href="'. $base_url .'users/view/'. $user['id'] .'">'. $user['username'] .'</a></li>
+			    	<li><a href="'. $base_url .'users/view/'. $user['id'] .'">'. $user['username'] . ' (' . $user['firstname'] . ' ' . $user['lastname'] . ')</a></li>
 			    ';
 		    }
 		    
