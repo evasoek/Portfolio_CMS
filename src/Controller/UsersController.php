@@ -17,7 +17,13 @@
 		 * Hierin worden alle gebruikers getoond
 		 */
 	    public function index() {
-	        $this->set('users', $this->Users->find('all'));
+		    $query = $this->Users->find('list', [
+			    'keyField' => 'id',
+			    'valueField' => 'username'
+		    ]);
+		    $data = $query->toArray();
+		    
+	        $this->set('users', $data);
 	    }
 	
 		/** 
