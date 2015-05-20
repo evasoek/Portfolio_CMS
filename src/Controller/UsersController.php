@@ -3,6 +3,7 @@
 	
 	use App\Controller\AppController;
 	use Cake\Event\Event;
+	use Cake\Routing\Router;
 	use Cake\Network\Exception\NotFoundException;
 	
 	class UsersController extends AppController {
@@ -17,13 +18,17 @@
 		 * Hierin worden alle gebruikers getoond
 		 */
 	    public function index() {
-		    $query = $this->Users->find('list', [
-			    'keyField' => 'id',
-			    'valueField' => 'username'
-		    ]);
-		    $data = $query->toArray();
+		    $users = $this->Users->find('all');
+		    $list = '';
+		    $base_url = Router::url('/', true);
 		    
-	        $this->set('users', $data);
+		    foreach ($users as $user) {
+			    $list .= '
+			    	<li><a href="'. $base_url .'users/view/'. $user['id'] .'">'. $user['username'] .'</a></li>
+			    ';
+		    }
+		    
+		    $this->set('users', $list);
 	    }
 	
 		/** 

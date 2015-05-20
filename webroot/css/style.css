@@ -20,23 +20,17 @@ a:hover {
 h1 {
 	font-weight: normal;
 }
-
-/* sidebar */
-.sidebar h2 {
-	color: rgba(0,0,0,0.7);
-	font-size: 1.2em;
-	text-transform: uppercase;
-}
-
-.sidebar ul.menu {
+		
+/* home */
+ul.menu {
 	padding: 0;
 }
 
-	.sidebar ul.menu li {
+	ul.menu li {
 		list-style: none;
 	}
 	
-		.sidebar ul.menu li a {
+		ul.menu li a {
 			display: block;
 			padding: 7px 15px;
 			margin-bottom: 1px;
@@ -50,7 +44,7 @@ h1 {
 		    transition: background-color 200ms linear;
 		}
 		
-		.sidebar ul.menu li a:hover {
+		ul.menu li a:hover {
 			background-color: rgba(0,0,0,0.1);
 		}
 
