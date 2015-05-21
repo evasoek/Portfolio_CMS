@@ -24,7 +24,7 @@
 		    
 		    foreach ($users as $user) {
 			    $list .= '
-			    	<li><a href="'. $base_url .'users/view/'. $user['id'] .'">'. $user['username'] . ' (' . $user['firstname'] . ' ' . $user['lastname'] . ')</a></li>
+			    	<li><a href="'. $base_url .'users/view/'. $user['id'] .'">'. $user['username'] .' ('. $user['firstname'] .' '. $user['lastname'] .')</a></li>
 			    ';
 		    }
 		    
@@ -41,7 +41,8 @@
 	            throw new NotFoundException(__('Invalid user'));
 	        }
 	
-	        $user = $this->Users->get($id);
+			// set user
+	        $user = $this->Users->get($id, ['contain' => ['Interests']]);
 	        $this->set(compact('user'));
 	    }
 	

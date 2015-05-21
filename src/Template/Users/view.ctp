@@ -5,12 +5,16 @@
             <h2>Basic user information</h2>
             <?php echo '<strong>Firstname:</strong> ' . $user['firstname']; ?> <br>
             <?php echo '<strong>Lasttname:</strong> ' . $user['lastname']; ?> <br>    
-            <?php echo '<strong>Bio:</strong> ' . $user['bioe']; ?> <br>
+            <?php echo '<strong>Bio:</strong> ' . $user['bio']; ?> <br>
         </div>
         
         <div class="well">
             <h2>Interests:</h2>
-            <!--Write code-->
+            <?php 
+	            foreach ($user['interests'] as $interest) {
+		            echo $interest->name .': '. $interest->description;
+	            } 
+	        ?>
         </div>
         
         <div class="well">
