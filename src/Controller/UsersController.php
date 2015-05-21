@@ -42,7 +42,7 @@
 	        }
 	
 			// set user
-	        $user = $this->Users->get($id, ['contain' => ['Interests']]);
+	        $user = $this->Users->get($id, ['contain' => ['Interests', 'Skills', 'SocialLinks']]);
 	        $this->set(compact('user'));
 	    }
 	
