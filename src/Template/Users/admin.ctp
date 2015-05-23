@@ -13,7 +13,7 @@
     <div class="col-sm-8 content">
         <div class="well">
             <h2>Basic user information</h2>
-            <?php echo $this->Html->link('Edit', ['controller' => 'Users', 'action' => 'edit']); ?>
+            <?php echo $this->Html->link('Edit', ['controller' => 'Users', 'action' => 'edit/' . $admin['id']]); ?>
             <BR>
             <?php echo '<strong>First name:</strong> ' . $admin['firstname']; ?> <br>
             <?php echo '<strong>Last name:</strong> ' . $admin['lastname']; ?> <br>    

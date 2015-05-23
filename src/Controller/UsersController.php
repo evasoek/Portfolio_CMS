@@ -100,5 +100,26 @@ class UsersController extends AppController {
         $admin = $this->Users->get($id, ['contain' => ['Interests', 'Skills', 'Projects', 'SocialLinks']]);
         $this->set(compact('admin'));
     }
+
+    /**
+     * editUser view
+     * Hierin kan een user zijn of haar gegevens aanpassen
+     */
+    public function edit($id = null) {
+        if (empty($id)) {
+            throw new NotFoundException;
+        }
+
+        $user = $this->Users->get($id);
+        if ($this->request->is('post')) {
+            $user = $this->Users->patchEntity($user, $this->request->data);
+            if ($this->Users->save($user)) {
+                $this->Flash->success(__('Basic user information has been updated.'));
+                return $this->redirect(['action' => 'admin']);
+            }
+            $this->Flash->error(__('Unable to update basic user information user.'));
+        }
+        $this->set('user', $user);
+    }
 }
 ?>
