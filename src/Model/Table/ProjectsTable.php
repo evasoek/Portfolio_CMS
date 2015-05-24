@@ -15,5 +15,13 @@
 		    ]);
 	    }
 	
+		/**
+	     * Valideren van velden
+	     */
+	    public function validationDefault(Validator $validator) {
+	        return $validator
+	                        ->notEmpty('name', 'A name is required')
+	                        ->notEmpty('description', 'A description is required');
+	    }
 	}
 ?>

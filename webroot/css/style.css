@@ -47,28 +47,17 @@ ul.menu {
 		ul.menu li a:hover {
 			background-color: rgba(0,0,0,0.1);
 		}
-
-/* === authorisation === */
-.auth {
-	padding-top: 30px;
-	padding-bottom: 30px;
-	background-color: #f5f5f5;
+		
+/* === forms === */
+form h1 {
+	padding-bottom: 5px;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
 }
-
-	.auth h1 {
-		padding-bottom: 5px;
-		border-bottom: 1px solid rgba(0,0,0,0.1);
-		font-size: 1.4em;
-	}
-
-	.auth label,
-	.auth button {
-		margin-top: 15px;
-	}
 	
-	.auth label {
-		font-weight: normal;
-	}
+form .input label,
+form button[type="submit"] {
+	margin-top: 15px;
+}
 
 /* === footer === */
 footer.footer {

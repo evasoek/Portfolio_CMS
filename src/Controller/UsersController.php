@@ -104,6 +104,7 @@ class UsersController extends AppController {
     /**
      * editUser view
      * Hierin kan een user zijn of haar gegevens aanpassen
+     * @param int ID - de user id
      */
     public function edit($id = null) {
         if (empty($id)) {

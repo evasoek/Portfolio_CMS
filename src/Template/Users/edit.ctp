@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-sm-6 col-sm-offset-3 auth">
+	<div class="col-sm-6 col-sm-offset-3 well">
 		<div class="container-fluid">
 			<?= $this->Form->create($user) ?>
 				<h1><?= __('Edit User') ?></h1>
