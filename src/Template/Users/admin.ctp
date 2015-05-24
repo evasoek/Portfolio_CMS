@@ -49,16 +49,20 @@
         </div>
 
         <div class="well">
-	        <?php echo $this->Html->link('Add', ['controller' => 'Projects', 'action' => 'add'], ['class' => 'btn btn-xs btn-success pull-right']); ?>
+	        <?php echo $this->Html->link('Add', ['controller' => 'Projects', 'action' => 'add', $admin['id']], ['class' => 'btn btn-xs btn-success pull-right']); ?>
             <h2>Projects:</h2>
             <BR>
             <?php
             foreach ($admin['projects'] as $project) {
-                echo '<img src="' . $project->imageURL . '" alt="Project image" style="width:300px;height:200px"> <BR>';
-                echo '<strong>' . $project->name . '</strong>: ' . $project->description . "    ";
-                echo $this->Html->link('Edit', ['controller' => 'Projects', 'action' => 'edit', $project->id]);
-                echo " - ";
-                echo $this->Html->link('Delete', ['controller' => 'Projects', 'action' => 'delete']);
+	            echo '
+	            	<div class="panel">
+						<img src="'. $project->imageURL .'" alt="'. $project->name .'"> <BR>
+						<strong>'. $project->name .'</strong>: '. $project->description .'
+						<span class="actions">
+							'. $this->Html->link('Edit', ['controller' => 'Projects', 'action' => 'edit', $project->id]) .' -
+							'. $this->Html->link('Delete', ['controller' => 'Projects', 'action' => 'delete']) .'
+						</span>
+					</div>';
             }
             ?>
         </div>

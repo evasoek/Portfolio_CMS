@@ -59,6 +59,16 @@ form button[type="submit"] {
 	margin-top: 15px;
 }
 
+/* === admin === */
+.panel img {
+	width: 100%;
+	height: auto;
+}
+
+.panel .actions {
+	margin-left: 15px;
+}
+
 /* === footer === */
 footer.footer {
 	position: absolute;

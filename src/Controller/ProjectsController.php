@@ -10,16 +10,17 @@
 		/**
 		 * Voeg een project toe aan het portfolio
 		 */
-		public function add() {
+		public function add($admin_id) {
 			$project = $this->Projects->newEntity();
 	        if ($this->request->is('post')) {
 	            $project = $this->Projects->patchEntity($project, $this->request->data);
 	            if ($this->Projects->save($project)) {
 	                $this->Flash->success(__('The project has been saved.'));
-	                return $this->redirect(['controller' => 'Projects', 'action' => 'admin']);
+	                return $this->redirect(['controller' => 'Users', 'action' => 'index']);
 	            }
 	            $this->Flash->error(__('Unable to create the project.'));
 	        }
+	        $this->set('admin', $admin_id);
 	        $this->set('project', $project);
 		}
 		
@@ -37,7 +38,7 @@
 	            $project = $this->Projects->patchEntity($project, $this->request->data);
 	            if ($this->Projects->save($project)) {
 	                $this->Flash->success(__('Project has been updated.'));
-	                return $this->redirect(['controller' => 'users', 'action' => 'admin']);
+	                return $this->redirect(['controller' => 'users', 'action' => 'index']);
 	            }
 	            $this->Flash->error(__('Unable to update project.'));
 	        }
