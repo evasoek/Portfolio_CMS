@@ -39,7 +39,7 @@
 	            $skill = $this->Skills->patchEntity($skill, $this->request->data);
 	            if ($this->Skills->save($skill)) {
 	                $this->Flash->success(__('Skill has been updated.'));
-	                return $this->redirect(['controller' => 'users', 'action' => 'index']);
+	                return $this->redirect(['controller' => 'users', 'action' => 'admin', $this->Auth->user('id')]);
 	            }
 	            $this->Flash->error(__('Unable to update the skill.'));
 	        }
@@ -55,7 +55,7 @@
 			$skill = $this->Skills->get($id);
 			if ($this->Skills->delete($skill)) {
 				$this->Flash->success(__('The skill has been deleted.'));
-				return $this->redirect(['controller' => 'users', 'action' => 'index']);
+				return $this->redirect(['controller' => 'users', 'action' => 'admin', $this->Auth->user('id')]);
 			}
 		}
 	}

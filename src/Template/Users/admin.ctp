@@ -77,8 +77,8 @@
 								<h3>'. $project->name .'</h3>
 								'. $project->description .'
 								<span class="actions">
-									'. $this->Html->link('Edit', ['controller' => 'Projects', 'action' => 'edit', $project->id]) .' - 
-									'. $this->Form->PostLink('Delete', ['controller' => 'Projects', 'action' => 'delete', $project->id], ['confirm' => 'Weet je zeker dat je dit project wilt verwijderen?']) .'
+									'. $this->Html->link('Edit', ['controller' => 'Projects', 'action' => 'edit', $project->id], ['class' => 'btn btn-xs btn-info']) .'
+									'. $this->Form->PostLink('Delete', ['controller' => 'Projects', 'action' => 'delete', $project->id], ['class' => 'btn btn-xs btn-danger'], ['confirm' => 'Weet je zeker dat je dit project wilt verwijderen?']) .'
 								</span>
 							</div>
 						</div>

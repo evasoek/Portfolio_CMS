@@ -71,6 +71,7 @@ form button[type="submit"] {
 /* === admin === */
 .caption .actions {
 	display: block;
+	margin-top: 15px;
 }
 
 /* === footer === */

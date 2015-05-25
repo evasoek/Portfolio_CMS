@@ -40,7 +40,7 @@ class InterestsController extends AppController {
             $interest = $this->Interests->patchEntity($interest, $this->request->data);
             if ($this->Interests->save($interest)) {
                 $this->Flash->success(__('Interest has been updated.'));
-                return $this->redirect(['controller' => 'users', 'action' => 'index']);
+                return $this->redirect(['controller' => 'users', 'action' => 'admin', $this->Auth->user('id')]);
             }
             $this->Flash->error(__('Unable to update the interest.'));
         }
@@ -56,7 +56,7 @@ class InterestsController extends AppController {
 		$interest = $this->Interests->get($id);
 		if ($this->Interests->delete($interest)) {
 			$this->Flash->success(__('The interest has been deleted.'));
-			return $this->redirect(['controller' => 'users', 'action' => 'index']);
+			return $this->redirect(['controller' => 'users', 'action' => 'admin', $this->Auth->user('id')]);
 		}
 	}
 }

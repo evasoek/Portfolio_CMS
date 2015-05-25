@@ -116,7 +116,7 @@ class UsersController extends AppController {
             $user = $this->Users->patchEntity($user, $this->request->data);
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('Basic user information has been updated.'));
-                return $this->redirect(['action' => 'admin']);
+                return $this->redirect(['action' => 'admin', $this->Auth->user('id')]);
             }
             $this->Flash->error(__('Unable to update basic user information user.'));
         }

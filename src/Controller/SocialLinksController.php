@@ -39,7 +39,7 @@
 	            $social = $this->SocialLinks->patchEntity($social, $this->request->data);
 	            if ($this->SocialLinks->save($social)) {
 	                $this->Flash->success(__('Social link has been updated.'));
-	                return $this->redirect(['controller' => 'users', 'action' => 'index']);
+	                return $this->redirect(['controller' => 'users', 'action' => 'admin', $this->Auth->user('id')]);
 	            }
 	            $this->Flash->error(__('Unable to update social link.'));
 	        }
@@ -55,7 +55,7 @@
 			$social = $this->SocialLinks->get($id);
 			if ($this->SocialLinks->delete($social)) {
 				$this->Flash->success(__('The social media link has been deleted.'));
-				return $this->redirect(['controller' => 'users', 'action' => 'index']);
+				return $this->redirect(['controller' => 'users', 'action' => 'admin', $this->Auth->user('id')]);
 			}
 		}
 	}

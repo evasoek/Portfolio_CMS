@@ -39,7 +39,7 @@
 	            $project = $this->Projects->patchEntity($project, $this->request->data);
 	            if ($this->Projects->save($project)) {
 	                $this->Flash->success(__('Project has been updated.'));
-	                return $this->redirect(['controller' => 'users', 'action' => 'index']);
+	                return $this->redirect(['controller' => 'users', 'action' => 'admin', $this->Auth->user('id')]);
 	            }
 	            $this->Flash->error(__('Unable to update project.'));
 	        }
@@ -55,7 +55,7 @@
 			$project = $this->Projects->get($id);
 			if ($this->Projects->delete($project)) {
 				$this->Flash->success(__('The project has been deleted.'));
-				return $this->redirect(['controller' => 'users', 'action' => 'index']);
+				return $this->redirect(['controller' => 'users', 'action' => 'admin', $this->Auth->user('id')]);
 			}
 		}
 	}
