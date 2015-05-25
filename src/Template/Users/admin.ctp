@@ -30,8 +30,8 @@
                 echo '
                 <div class="interest">
                 	<strong>' . $interest->name . '</strong>: ' . $interest->description .'
-					'. $this->Html->link('Edit', ['controller' => 'Interests', 'action' => 'edit']) .' - 
-					'. $this->Html->link('Delete', ['controller' => 'Interests', 'action' => 'delete']) .'
+					'. $this->Html->link('Edit', ['controller' => 'Interests', 'action' => 'edit', $interest->id]) .' - 
+					'. $this->Html->link('Delete', ['controller' => 'Interests', 'action' => 'delete', $interest->id]) .'
 				</div>';
             }
             ?>
@@ -46,8 +46,8 @@
                 echo '
                 	<div class="skill">
 	                	<strong>' . $skill->name . ' (' . $skill->level . ')</strong>: ' . $skill->description .'
-						'. $this->Html->link('Edit', ['controller' => 'Skills', 'action' => 'edit']) .' - 
-						'. $this->Html->link('Delete', ['controller' => 'Skills', 'action' => 'delete']) .'
+						'. $this->Html->link('Edit', ['controller' => 'Skills', 'action' => 'edit', $skill->id]) .' - 
+						'. $this->Html->link('Delete', ['controller' => 'Skills', 'action' => 'delete', $skill->id]) .'
 					</div>';
             }
             ?>
@@ -68,7 +68,7 @@
 								'. $project->description .'
 								<span class="actions">
 									'. $this->Html->link('Edit', ['controller' => 'Projects', 'action' => 'edit', $project->id]) .' - 
-									'. $this->Html->link('Delete', ['controller' => 'Projects', 'action' => 'delete']) .'
+									'. $this->Html->link('Delete', ['controller' => 'Projects', 'action' => 'delete', $project->id]) .'
 								</span>
 							</div>
 						</div>
@@ -87,7 +87,7 @@
                 <div class="social-link">
 	            	<strong><a href="' . $socialLink->url . '">' . $socialLink->name . '</a></strong>
 					'. $this->Html->link('Edit', ['controller' => 'SocialLinks', 'action' => 'edit', $admin['id']]) .' - 
-					'. $this->Html->link('Delete', ['controller' => 'SocialLinks', 'action' => 'delete']) .'
+					'. $this->Html->link('Delete', ['controller' => 'SocialLinks', 'action' => 'delete', $socialLink->id]) .'
 				</div>';
             }
             ?>

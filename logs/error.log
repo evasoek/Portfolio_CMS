@@ -2278,3 +2278,14 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
+2015-05-25 10:07:40 Error: [Cake\Network\Exception\NotFoundException] Not Found
+Request URL: /Portfolio_CMS/skills/edit
+Stack Trace:
+#0 [internal function]: App\Controller\SkillsController->edit()
+#1 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Controller/Controller.php(405): call_user_func_array(Array, Array)
+#2 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#3 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\SkillsController))
+#4 /Applications/MAMP/htdocs/Portfolio_CMS/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 {main}
+
+

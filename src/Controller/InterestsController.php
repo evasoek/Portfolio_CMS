@@ -18,7 +18,7 @@ class InterestsController extends AppController {
             $interest = $this->Interests->patchEntity($interest, $this->request->data);
             if ($this->Interests->save($interest)) {
                 $this->Flash->success(__('The interest has been saved.'));
-                return $this->redirect(['controller' => 'Users', 'action' => 'index']);
+                return $this->redirect(['controller' => 'Users', 'action' => 'admin', $admin_id]);
             }
             $this->Flash->error(__('Unable to add the interest.'));
         }

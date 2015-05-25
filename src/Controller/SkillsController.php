@@ -17,7 +17,7 @@
 	            $skill = $this->Skills->patchEntity($skill, $this->request->data);
 	            if ($this->Skills->save($skill)) {
 	                $this->Flash->success(__('The skill has been saved.'));
-	                return $this->redirect(['controller' => 'Users', 'action' => 'index']);
+	                return $this->redirect(['controller' => 'Users', 'action' => 'admin', $admin_id]);
 	            }
 	            $this->Flash->error(__('Unable to add the skill.'));
 	        }

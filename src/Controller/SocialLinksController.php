@@ -17,7 +17,7 @@
 	            $social = $this->SocialLinks->patchEntity($social, $this->request->data);
 	            if ($this->SocialLinks->save($social)) {
 	                $this->Flash->success(__('The social link has been saved.'));
-	                return $this->redirect(['controller' => 'users','action' => 'index']);
+	                return $this->redirect(['controller' => 'users','action' => 'admin', $admin_id]);
 	            }
 	            $this->Flash->error(__('Unable to add the social link.'));
 	        }

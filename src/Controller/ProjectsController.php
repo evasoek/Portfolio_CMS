@@ -17,7 +17,7 @@
 	            $project = $this->Projects->patchEntity($project, $this->request->data);
 	            if ($this->Projects->save($project)) {
 	                $this->Flash->success(__('The project has been saved.'));
-	                return $this->redirect(['controller' => 'Users', 'action' => 'index']);
+	                return $this->redirect(['controller' => 'Users', 'action' => 'admin', $admin_id]);
 	            }
 	            $this->Flash->error(__('Unable to create the project.'));
 	        }
