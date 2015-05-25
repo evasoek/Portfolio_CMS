@@ -7,8 +7,9 @@
 				<?= $this->Form->input('password') ?>
                                 <?= $this->Form->input('firstname', ['label' => 'First name']) ?>
 				<?= $this->Form->input('lastname', ['label' => 'Last name']) ?>
-                                <?= $this->Form->input('bio', ['label' => 'Bio']) ?>
-				<?= $this->Form->button(__('Save')); ?>
+                                <?= $this->Form->input('bio', ['type' => 'textarea', 'label' => 'Bio']) ?>
+                                <?= $this->Form->input('imageURL', ['label' => 'Profile picture URL']) ?>
+				<?= $this->Form->button(__('Submit')); ?>
 			<?= $this->Form->end() ?>
 		</div>
 	</div>

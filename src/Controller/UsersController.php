@@ -108,29 +108,31 @@ class UsersController extends AppController {
      */
     public function edit($id = null) {
         $user = $this->Users->get($id);
-		if ($this->request->is(['post', 'put'])) {
-			$this->Users->patchEntity($user, $this->request->data);
-			if ($this->Users->save($user)) {
-				$this->Flash->success(__('User has been updated.'));
-				return $this->redirect(['controller' => 'users','action' => 'admin', $this->Auth->user('id')]);
-			}
-			$this->Flash->error(__('Unable to edit user.'));
-		}
-		
-		$this->set('user', $user);
+        if ($this->request->is(['post', 'put'])) {
+            $this->Users->patchEntity($user, $this->request->data);
+            if ($this->Users->save($user)) {
+                $this->Flash->success(__('User has been updated.'));
+                return $this->redirect(['controller' => 'users', 'action' => 'admin', $this->Auth->user('id')]);
+            }
+            $this->Flash->error(__('Unable to edit user.'));
+        }
+
+        $this->set('user', $user);
     }
-    
+
     /**
-	 * Delete user
-	 */
-	public function delete($id) {
-		$this->request->allowMethod(['post', 'delete']);
-		
-		$user = $this->Users->get($id);
-		if ($this->Users->delete($user)) {
-			$this->Flash->success(__('The user has been deleted.'));
-			return $this->redirect(['controller' => 'users', 'action' => 'index']);
-		}
-	}
+     * Delete user
+     */
+    public function delete($id) {
+        $this->request->allowMethod(['post', 'delete']);
+
+        $user = $this->Users->get($id);
+        if ($this->Users->delete($user)) {
+            $this->Flash->success(__('The user has been deleted.'));
+            return $this->redirect(['controller' => 'users', 'action' => 'index']);
+        }
+    }
+
 }
+
 ?>

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
@@ -12,6 +13,7 @@
  * @since     0.2.9
  * @license   http://www.opensource.org/licenses/mit-license.php MIT License
  */
+
 namespace App\Controller;
 
 use Cake\Controller\Controller;
@@ -37,7 +39,7 @@ class AppController extends Controller {
     public function initialize() {
         $this->loadComponent('Flash');
         $this->loadComponent('Auth', [
-	        'authorize' => ['Controller'],
+            'authorize' => ['Controller'],
             'loginRedirect' => [
                 'controller' => 'Users',
                 'action' => 'admin'
@@ -47,16 +49,16 @@ class AppController extends Controller {
                 'action' => 'index'
             ]
         ]);
-        
+
         $this->set('authUser', $this->Auth->user());
     }
 
     public function beforeFilter(Event $event) {
         $this->Auth->allow(['index', 'view', 'display']);
     }
-    
-    public function isAuthorized($user)
-    {
+
+    public function isAuthorized($user) {
         return true;
     }
+
 }

@@ -4,6 +4,7 @@
 			<h1><?= __('Edit project') ?></h1>
 			<?= $this->Form->input('name') ?>
 			<?= $this->Form->input('description', ['type' => 'textarea']) ?>
+                        <?= $this->Form->input('imageURL', ['type' => 'textarea']) ?>
 			<?= $this->Form->button(__('Save')); ?>
 		<?= $this->Form->end() ?>
 	</div>
