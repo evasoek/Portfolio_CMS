@@ -22,7 +22,7 @@
         </div>
 
         <div class="well">
-	        <?php echo $this->Html->link('Add', ['controller' => 'Interests', 'action' => 'add'], ['class' => 'btn btn-xs btn-success pull-right']); ?>
+	        <?php echo $this->Html->link('Add', ['controller' => 'Interests', 'action' => 'add', $admin['id']], ['class' => 'btn btn-xs btn-success pull-right']); ?>
             <h2>Interests:</h2>
             <BR>
             <?php
@@ -38,7 +38,7 @@
         </div>
 
         <div class="well">
-	        <?php echo $this->Html->link('Add', ['controller' => 'Skills', 'action' => 'add'], ['class' => 'btn btn-xs btn-success pull-right']); ?>
+	        <?php echo $this->Html->link('Add', ['controller' => 'Skills', 'action' => 'add', $admin['id']], ['class' => 'btn btn-xs btn-success pull-right']); ?>
             <h2>Skills:</h2>
             <BR>
             <?php
