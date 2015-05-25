@@ -9,7 +9,7 @@
 				<?= $this->Form->input('lastname', ['label' => 'Last name']) ?>
                                 <?= $this->Form->input('bio', ['type' => 'textarea', 'label' => 'Bio']) ?>
                                 <?= $this->Form->input('imageURL', ['label' => 'Profile picture URL']) ?>
-				<?= $this->Form->button(__('Submit')); ?>
+				<?= $this->Form->button(__('Save')); ?>
 			<?= $this->Form->end() ?>
 		</div>
 	</div>
