@@ -9,7 +9,6 @@
         <strong>Or upload a picture:</strong>
         <?= $this->Form->file('submittedfile'); ?>
         <?= $this->Form->button(__('Save')); ?>
-        <?= $this->Form->button(__('Save')); ?>
         <?= $this->Form->end() ?>
     </div>
 </div>
