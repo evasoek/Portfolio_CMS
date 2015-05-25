@@ -68,6 +68,10 @@ form button[type="submit"] {
 	margin-top: 15px;
 }
 
+form .input {
+	overflow: auto;
+}
+
 /* === admin === */
 .caption .actions {
 	display: block;

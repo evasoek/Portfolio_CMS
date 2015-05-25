@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Controller\AppController;
 use Cake\Event\Event;
 use Cake\Network\Exception\NotFoundException;
+use Cake\ORM\TableRegistry;
 
 class ProjectsController extends AppController {
 
@@ -40,8 +41,16 @@ class ProjectsController extends AppController {
             }
             $this->Flash->error(__('Unable to update your project.'));
         }
+        
+        $image = '';
+        if ($project->imageURL) {
+			$image = '<img src="' . $project->imageURL . '" alt="' . $project->name . '">';
+        } else {
+        	$image = '<img src="../../webroot/img/project.jpg" alt="No project picture set">';
+        }
 
         $this->set('project', $project);
+        $this->set('image', $image);
     }
 
     /**
@@ -57,6 +66,20 @@ class ProjectsController extends AppController {
         }
     }
 
+	/**
+     * Delete project image
+     */
+    public function delete_image($id) {
+	    $projectsTable = TableRegistry::get('projects');
+        $project = $projectsTable->get($id);
+        
+        $project->imageURL = null;
+        if ($projectsTable->save($project)) {
+	        $this->Flash->success(__('Your project image has been deleted.'));
+            return $this->redirect(['controller' => 'projects', 'action' => 'edit', $id]);
+        }
+        $this->Flash->error(__('Unable to delete your project image.'));
+    }
 }
 
 ?>

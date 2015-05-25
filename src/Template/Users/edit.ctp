@@ -1,17 +1,29 @@
 <div class="row">
-    <div class="col-sm-6 col-sm-offset-3 well">
+    <div class="col-sm-12 well">
         <div class="container-fluid">
+	        <h1><?= __('Edit User') ?></h1>
+	        <?= '<div class="input">
+	        	<label for="image">Current profile image</label>
+				<div class="thumbnail">
+                	'. $image .'
+                	<div class="caption">
+						<span class="actions">
+							' . $this->Form->PostLink('Delete', ['controller' => 'Users', 'action' => 'delete_image', $user->id], ['class' => 'btn btn-xs btn-danger']) . '<hr>
+						'. $this->Form->create($user, ['type' => 'file']) .'
+						'. $this->Form->input('upload an image', ['type' => 'file']) .'
+						'. $this->Form->button(__('Save image')) .'
+						'. $this->Form->end() .'
+						</span>
+					</div>
+				</div>
+			</div>' ?>
+			
             <?= $this->Form->create($user) ?>
-            <h1><?= __('Edit User') ?></h1>
             <?= $this->Form->input('username') ?>
             <?= $this->Form->input('password') ?>
             <?= $this->Form->input('firstname', ['label' => 'First name']) ?>
             <?= $this->Form->input('lastname', ['label' => 'Last name']) ?>
             <?= $this->Form->input('bio', ['type' => 'textarea', 'label' => 'Bio']) ?>
-            <?= $this->Form->input('imageURL', ['label' => 'Profile picture URL']) ?>
-            <?= $this->Form->create($image, ['type' => 'file']); ?>
-            <strong>Or upload a picture:</strong>
-            <?= $this->Form->file('submittedfile'); ?>
             <?= $this->Form->button(__('Save')); ?>
             <?= $this->Form->end() ?>
         </div>
