@@ -99,7 +99,16 @@ class UsersController extends AppController {
         }
 
         $admin = $this->Users->get($id, ['contain' => ['Interests', 'Skills', 'Projects', 'SocialLinks']]);
+        
+        $image = '';
+        if ($admin->imageURL) {
+            $image = '<img src="' . $admin->imageURL . '" alt="Profile picture">';
+        } else {
+            $image = '<img src="../../webroot/img/user.gif" alt="No profile picture set">';
+        }
+        
         $this->set(compact('admin'));
+        $this->set('image', $image);
     }
 
     /**
