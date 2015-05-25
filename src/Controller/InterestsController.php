@@ -46,5 +46,18 @@ class InterestsController extends AppController {
         }
         $this->set('interest', $interest);
 	}
+	
+	/**
+	 * Delete Interest
+	 */
+	public function delete($id) {
+		$this->request->allowMethod(['post', 'delete']);
+		
+		$interest = $this->Interests->get($id);
+		if ($this->Interests->delete($interest)) {
+			$this->Flash->success(__('The interest has been deleted.'));
+			return $this->redirect(['controller' => 'users', 'action' => 'index']);
+		}
+	}
 }
 ?>

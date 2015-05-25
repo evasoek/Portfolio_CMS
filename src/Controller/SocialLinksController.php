@@ -45,5 +45,18 @@
 	        }
 	        $this->set('social', $social);
 		}
+		
+		/**
+		 * Delete social link
+		 */
+		public function delete($id) {
+			$this->request->allowMethod(['post', 'delete']);
+			
+			$social = $this->SocialLinks->get($id);
+			if ($this->SocialLinks->delete($social)) {
+				$this->Flash->success(__('The social media link has been deleted.'));
+				return $this->redirect(['controller' => 'users', 'action' => 'index']);
+			}
+		}
 	}
 ?>

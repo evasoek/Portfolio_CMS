@@ -57,7 +57,7 @@ class UsersController extends AppController {
             $user = $this->Users->patchEntity($user, $this->request->data);
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
-                return $this->redirect(['action' => 'register']);
+                return $this->redirect(['action' => 'login']);
             }
             $this->Flash->error(__('Unable to register the user.'));
         }
@@ -73,7 +73,7 @@ class UsersController extends AppController {
             $user = $this->Auth->identify();
             if ($user) {
                 $this->Auth->setUser($user);
-                return $this->redirect($this->Auth->redirectUrl());
+                return $this->redirect(['action' => 'admin', $user['id']]);
             }
             $this->Flash->error(__('Invalid username or password, try again'));
         }
@@ -122,5 +122,18 @@ class UsersController extends AppController {
         }
         $this->set('user', $user);
     }
+    
+    /**
+	 * Delete user
+	 */
+	public function delete($id) {
+		$this->request->allowMethod(['post', 'delete']);
+		
+		$user = $this->Users->get($id);
+		if ($this->Users->delete($user)) {
+			$this->Flash->success(__('The user has been deleted.'));
+			return $this->redirect(['controller' => 'users', 'action' => 'index']);
+		}
+	}
 }
 ?>

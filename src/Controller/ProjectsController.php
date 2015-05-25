@@ -45,5 +45,18 @@
 	        }
 	        $this->set('project', $project);
 		}
+		
+		/**
+		 * Delete project
+		 */
+		public function delete($id) {
+			$this->request->allowMethod(['post', 'delete']);
+			
+			$project = $this->Projects->get($id);
+			if ($this->Projects->delete($project)) {
+				$this->Flash->success(__('The project has been deleted.'));
+				return $this->redirect(['controller' => 'users', 'action' => 'index']);
+			}
+		}
 	}
 ?>

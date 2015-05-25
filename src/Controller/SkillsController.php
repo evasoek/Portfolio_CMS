@@ -45,5 +45,18 @@
 	        }
 	        $this->set('skill', $skill);
 		}
+		
+		/**
+		 * Delete skill
+		 */
+		public function delete($id) {
+			$this->request->allowMethod(['post', 'delete']);
+			
+			$skill = $this->Skills->get($id);
+			if ($this->Skills->delete($skill)) {
+				$this->Flash->success(__('The skill has been deleted.'));
+				return $this->redirect(['controller' => 'users', 'action' => 'index']);
+			}
+		}
 	}
 ?>
