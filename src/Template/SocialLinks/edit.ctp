@@ -5,7 +5,7 @@
 				<h1><?= __('Edit social media link') ?></h1>
 				<?= $this->Form->input('name') ?>
 				<?= $this->Form->input('url') ?>
-				<?= $this->Form->button(__('Submit')); ?>
+				<?= $this->Form->button(__('Save')); ?>
 			<?= $this->Form->end() ?>
 		</div>
 	</div>

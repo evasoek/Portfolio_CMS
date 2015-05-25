@@ -5,7 +5,7 @@
 			<?= $this->Form->input('name') ?>
 			<?= $this->Form->input('level') ?>
 			<?= $this->Form->input('description', ['type' => 'textarea']) ?>
-			<?= $this->Form->button(__('Submit')); ?>
+			<?= $this->Form->button(__('Save')); ?>
 		<?= $this->Form->end() ?>
 	</div>
 </div>
