@@ -30,20 +30,17 @@
 		 * @param int ID - project id
 		 */
 		public function edit($id = null) {
-			if (empty($id)) {
-	            throw new NotFoundException;
-	        }
-	
-	        $social = $this->SocialLinks->get($id);
-	        if ($this->request->is('post')) {
-	            $social = $this->SocialLinks->patchEntity($social, $this->request->data);
-	            if ($this->SocialLinks->save($social)) {
-	                $this->Flash->success(__('Social link has been updated.'));
-	                return $this->redirect(['controller' => 'users', 'action' => 'admin', $this->Auth->user('id')]);
-	            }
-	            $this->Flash->error(__('Unable to update social link.'));
-	        }
-	        $this->set('social', $social);
+			$social = $this->SocialLinks->get($id);
+			if ($this->request->is(['post', 'put'])) {
+				$this->SocialLinks->patchEntity($social, $this->request->data);
+				if ($this->SocialLinks->save($social)) {
+					$this->Flash->success(__('Your social media has been updated.'));
+					return $this->redirect(['controller' => 'users','action' => 'admin', $this->Auth->user('id')]);
+				}
+				$this->Flash->error(__('Unable to update your social media.'));
+			}
+			
+			$this->set('social', $social);
 		}
 		
 		/**

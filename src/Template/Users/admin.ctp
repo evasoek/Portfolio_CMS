@@ -31,7 +31,7 @@
 		<!-- interests -->
         <div class="well">
 	        <?php echo $this->Html->link('Add', ['controller' => 'Interests', 'action' => 'add', $admin['id']], ['class' => 'btn btn-xs btn-success pull-right']); ?>
-            <h2>Interests:</h2>
+            <h2>Interests</h2>
             <BR>
             <?php
             foreach ($admin['interests'] as $interest) {
@@ -48,7 +48,7 @@
 		<!-- skills -->
         <div class="well">
 	        <?php echo $this->Html->link('Add', ['controller' => 'Skills', 'action' => 'add', $admin['id']], ['class' => 'btn btn-xs btn-success pull-right']); ?>
-            <h2>Skills:</h2>
+            <h2>Skills</h2>
             <BR>
             <?php
             foreach ($admin['skills'] as $skill) {
@@ -65,7 +65,7 @@
 		<!-- projects -->
         <div class="well">
 	        <?php echo $this->Html->link('Add', ['controller' => 'Projects', 'action' => 'add', $admin['id']], ['class' => 'btn btn-xs btn-success pull-right']); ?>
-            <h2>Projects:</h2>
+            <h2>Projects</h2>
             <BR>
             <?php
             foreach ($admin['projects'] as $project) {
@@ -90,7 +90,7 @@
 		<!-- social media -->
         <div class="well">
 	        <?php echo $this->Html->link('Add', ['controller' => 'SocialLinks', 'action' => 'add', $admin['id']], ['class' => 'btn btn-xs btn-success pull-right']); ?>
-            <h2>Social Links:</h2>
+            <h2>Social Links</h2>
             <BR>
             <?php
             foreach ($admin['social_links'] as $socialLink) {

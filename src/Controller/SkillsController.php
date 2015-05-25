@@ -30,20 +30,17 @@
 		 * @param int ID - project id
 		 */
 		public function edit($id = null) {
-			if (empty($id)) {
-	            throw new NotFoundException;
-	        }
-	
-	        $skill = $this->Skills->get($id);
-	        if ($this->request->is('post')) {
-	            $skill = $this->Skills->patchEntity($skill, $this->request->data);
-	            if ($this->Skills->save($skill)) {
-	                $this->Flash->success(__('Skill has been updated.'));
-	                return $this->redirect(['controller' => 'users', 'action' => 'admin', $this->Auth->user('id')]);
-	            }
-	            $this->Flash->error(__('Unable to update the skill.'));
-	        }
-	        $this->set('skill', $skill);
+			$skill = $this->Skills->get($id);
+			if ($this->request->is(['post', 'put'])) {
+				$this->Skills->patchEntity($skill, $this->request->data);
+				if ($this->Skills->save($skill)) {
+					$this->Flash->success(__('Your skill has been updated.'));
+					return $this->redirect(['controller' => 'users','action' => 'admin', $this->Auth->user('id')]);
+				}
+				$this->Flash->error(__('Unable to update your skill.'));
+			}
+			
+			$this->set('skill', $skill);
 		}
 		
 		/**

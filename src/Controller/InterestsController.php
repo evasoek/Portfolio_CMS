@@ -31,20 +31,17 @@ class InterestsController extends AppController {
 	 * @param int ID - project id
 	 */
 	public function edit($id = null) {
-		if (empty($id)) {
-            throw new NotFoundException;
-        }
-
-        $interest = $this->Interests->get($id);
-        if ($this->request->is('post')) {
-            $interest = $this->Interests->patchEntity($interest, $this->request->data);
-            if ($this->Interests->save($interest)) {
-                $this->Flash->success(__('Interest has been updated.'));
-                return $this->redirect(['controller' => 'users', 'action' => 'admin', $this->Auth->user('id')]);
-            }
-            $this->Flash->error(__('Unable to update the interest.'));
-        }
-        $this->set('interest', $interest);
+		$interest = $this->Interests->get($id);
+		if ($this->request->is(['post', 'put'])) {
+			$this->Interests->patchEntity($interest, $this->request->data);
+			if ($this->Interests->save($interest)) {
+				$this->Flash->success(__('Your interest has been updated.'));
+				return $this->redirect(['controller' => 'users','action' => 'admin', $this->Auth->user('id')]);
+			}
+			$this->Flash->error(__('Unable to update your interest.'));
+		}
+		
+		$this->set('interest', $interest);
 	}
 	
 	/**

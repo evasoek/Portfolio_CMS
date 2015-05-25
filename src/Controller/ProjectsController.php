@@ -30,20 +30,17 @@
 		 * @param int ID - project id
 		 */
 		public function edit($id = null) {
-			if (empty($id)) {
-	            throw new NotFoundException;
-	        }
-	
-	        $project = $this->Projects->get($id);
-	        if ($this->request->is('post')) {
-	            $project = $this->Projects->patchEntity($project, $this->request->data);
-	            if ($this->Projects->save($project)) {
-	                $this->Flash->success(__('Project has been updated.'));
-	                return $this->redirect(['controller' => 'users', 'action' => 'admin', $this->Auth->user('id')]);
-	            }
-	            $this->Flash->error(__('Unable to update project.'));
-	        }
-	        $this->set('project', $project);
+			$project = $this->Projects->get($id);
+			if ($this->request->is(['post', 'put'])) {
+				$this->Projects->patchEntity($project, $this->request->data);
+				if ($this->Projects->save($project)) {
+					$this->Flash->success(__('Your project has been updated.'));
+					return $this->redirect(['controller' => 'users','action' => 'admin', $this->Auth->user('id')]);
+				}
+				$this->Flash->error(__('Unable to update your project.'));
+			}
+			
+			$this->set('project', $project);
 		}
 		
 		/**
