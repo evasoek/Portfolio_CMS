@@ -9,6 +9,7 @@
 	
 		/**
 		 * Voeg een project toe aan het portfolio
+		 * @param int admin ID
 		 */
 		public function add($admin_id) {
 			$project = $this->Projects->newEntity();

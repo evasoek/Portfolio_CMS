@@ -12,7 +12,7 @@
             <h2>Interests:</h2>
             <?php
             foreach ($user['interests'] as $interest) {
-                echo '<strong>' . $interest->name . '</strong>: ' . $interest->description;
+                echo '<strong>' . $interest->name . '</strong>: ' . $interest->description .'<br>';
             }
             ?>
         </div>
@@ -21,7 +21,7 @@
             <h2>Skills:</h2>
             <?php
             foreach ($user['skills'] as $skill) {
-                echo '<strong>' . $skill->name . ' (' . $skill->level . ')</strong>: ' . $skill->description;
+                echo '<strong>' . $skill->name . ' (' . $skill->level . ')</strong>: ' . $skill->description .'<br>';
             }
             ?>
         </div>
@@ -30,8 +30,16 @@
             <h2>Projects:</h2>
             <?php
             foreach ($user['projects'] as $project) {
-                echo '<img src="'. $project->imageURL . '" alt="Project image" style="width:300px;height:200px"><BR>';
-                echo '<strong>' . $project->name . '</strong>: ' . $project->description . '<BR>';
+	            echo '
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<img src="'. $project->imageURL .'" alt="'. $project->name .'">
+						<div class="caption">
+							<h3>'. $project->name .'</h3>
+							'. $project->description .'
+						</div>
+					</div>
+				</div>';
             }
             ?>
         </div>
@@ -40,7 +48,7 @@
             <h2>Social Links:</h2>
             <?php
             foreach ($user['social_links'] as $socialLink) {
-                echo '<strong><a href="' . $socialLink->url . '">' . $socialLink->name . '</a></strong>    ';
+                echo '<strong><a href="' . $socialLink->url . '">' . $socialLink->name . '</a></strong><br>';
             }
             ?>
         </div>

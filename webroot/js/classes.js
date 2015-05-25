@@ -8,4 +8,5 @@ $(document).ready(function(){
 	$('button[type="submit"]').addClass('btn btn-primary');
 	
 	$('.error').addClass('alert alert-danger');
+	$('.success').addClass('alert alert-success');
 });

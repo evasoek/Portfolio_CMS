@@ -20,6 +20,15 @@ a:hover {
 h1 {
 	font-weight: normal;
 }
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.well {
+	overflow: auto;
+}
 		
 /* home */
 ul.menu {
@@ -60,13 +69,8 @@ form button[type="submit"] {
 }
 
 /* === admin === */
-.panel img {
-	width: 100%;
-	height: auto;
-}
-
-.panel .actions {
-	margin-left: 15px;
+.caption .actions {
+	display: block;
 }
 
 /* === footer === */

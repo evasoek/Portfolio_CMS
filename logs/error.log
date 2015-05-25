@@ -2059,3 +2059,185 @@ Stack Trace:
 #2 {main}
 
 
+2015-05-25 09:34:42 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /Portfolio_CMS/css/bootstrap.css.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/Portfolio_CMS/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-05-25 09:35:30 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /Portfolio_CMS/css/bootstrap.css.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/Portfolio_CMS/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-05-25 09:36:04 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /Portfolio_CMS/css/bootstrap.css.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/Portfolio_CMS/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-05-25 09:38:41 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /Portfolio_CMS/css/bootstrap.css.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/Portfolio_CMS/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-05-25 09:42:31 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /Portfolio_CMS/css/bootstrap.css.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/Portfolio_CMS/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-05-25 09:42:46 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /Portfolio_CMS/css/bootstrap.css.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/Portfolio_CMS/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-05-25 09:43:29 Error: [Cake\Network\Exception\NotFoundException] Not Found
+Request URL: /Portfolio_CMS/users/edit
+Stack Trace:
+#0 [internal function]: App\Controller\UsersController->edit()
+#1 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Controller/Controller.php(405): call_user_func_array(Array, Array)
+#2 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#3 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#4 /Applications/MAMP/htdocs/Portfolio_CMS/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 {main}
+
+
+2015-05-25 09:44:10 Error: [Cake\Controller\Exception\MissingActionException] Action SocialLinksController::add() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'SocialLinksController',
+  'action' => 'add',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /Portfolio_CMS/social_links/add
+Stack Trace:
+#0 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\SocialLinksController))
+#2 /Applications/MAMP/htdocs/Portfolio_CMS/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2015-05-25 09:46:01 Error: [Cake\View\Exception\MissingTemplateException] Template file "SocialLinks/add.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'SocialLinks/add.ctp',
+)
+Request URL: /Portfolio_CMS/social_links/add
+Stack Trace:
+#0 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/View/View.php(460): Cake\View\View->_getViewFileName(NULL)
+#1 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Controller/Controller.php(576): Cake\View\View->render(NULL, NULL)
+#2 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#3 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\SocialLinksController))
+#4 /Applications/MAMP/htdocs/Portfolio_CMS/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 {main}
+
+
+2015-05-25 09:49:49 Warning: Warning (2): Missing argument 1 for App\Controller\SocialLinksController::add() in [/Applications/MAMP/htdocs/Portfolio_CMS/src/Controller/SocialLinksController.php, line 14]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+App\Controller\SocialLinksController::add() - APP/Controller/SocialLinksController.php, line 14
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 405
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-05-25 09:50:37 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /Portfolio_CMS/css/bootstrap.css.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/Portfolio_CMS/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-05-25 09:50:57 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /Portfolio_CMS/css/bootstrap.css.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/Portfolio_CMS/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-05-25 09:51:00 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /Portfolio_CMS/css/bootstrap.css.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/Portfolio_CMS/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-05-25 09:56:09 Error: [Cake\View\Exception\MissingTemplateException] Template file "SocialLinks/edit.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'SocialLinks/edit.ctp',
+)
+Request URL: /Portfolio_CMS/social_links/edit/1
+Stack Trace:
+#0 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/View/View.php(460): Cake\View\View->_getViewFileName(NULL)
+#1 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Controller/Controller.php(576): Cake\View\View->render(NULL, NULL)
+#2 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#3 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\SocialLinksController))
+#4 /Applications/MAMP/htdocs/Portfolio_CMS/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 {main}
+
+
