@@ -25,9 +25,23 @@ class UsersController extends AppController {
         $base_url = Router::url('/', true);
 
         foreach ($users as $user) {
+	        $image = '';
+	        if ($user['imageURL']) {
+				$image = '<img src="'. $user['imageURL'] .'" alt="'. $user->name .'">';
+	        } else {
+	        	$image = '<img src="'. $this->webroot .'img/user.gif" alt="No project picture set">';
+	        }
+	        
             $list .= '
-			    	<li><a href="' . $base_url . 'users/view/' . $user['id'] . '">' . $user['username'] . ' (' . $user['firstname'] . ' ' . $user['lastname'] . ')</a></li>
-			    ';
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						'. $image .'
+						<div class="caption">
+							<h3>'. $user['firstname'] .' '. $user['lastname'] .'</h3>
+							<p><a href="'. $base_url . 'users/view/' . $user['id'] .'" class="btn btn-sm btn-primary" role="button">Bekijk portfolio</a></p>
+						</div>
+					</div>
+				</div>';
         }
 
         $this->set('users', $list);

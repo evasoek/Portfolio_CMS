@@ -72,6 +72,11 @@ form .input {
 	overflow: auto;
 }
 
+/* === tables === */
+td.action {
+	width: 20%;
+}
+
 /* === admin === */
 .caption .actions {
 	display: block;

@@ -38,32 +38,48 @@
         <div class="well">
             <?php echo $this->Html->link('Add', ['controller' => 'Interests', 'action' => 'add', $admin['id']], ['class' => 'btn btn-xs btn-success pull-right']); ?>
             <h2>Interests</h2>
-            <?php
-            foreach ($admin['interests'] as $interest) {
-                echo '
-                <div class="interest">
-                	<strong>' . $interest->name . '</strong>: ' . $interest->description . '
-					' . $this->Html->link('Edit', ['controller' => 'Interests', 'action' => 'edit', $interest->id]) . ' - 
-					' . $this->Form->PostLink('Delete', ['controller' => 'Interests', 'action' => 'delete', $interest->id], ['confirm' => 'Weet je zeker dat je dit item wilt verwijderen?']) . '
-				</div>';
-            }
-            ?>
+            <table class="table">
+	            <tr>
+		            <th>Interest</th>
+		            <th>Description</th>
+		            <th>Action</th>
+	            </tr>
+	            <?php
+	            foreach ($admin['interests'] as $interest) {
+	                echo '
+	                <tr>
+	                	<th>'. $interest->name .'</th>
+	                	<td>'. $interest->description .'</td>
+						<td class="action">'. $this->Html->link('Edit', ['controller' => 'Interests', 'action' => 'edit', $interest->id], ['class' => 'btn btn-xs btn-info']) . '
+						'. $this->Form->PostLink('Delete', ['controller' => 'Interests', 'action' => 'delete', $interest->id], ['class' => 'btn btn-xs btn-danger'], ['confirm' => 'Weet je zeker dat je dit item wilt verwijderen?']) .'</td>
+					</tr>';
+	            }
+	            ?>
+            </table>
         </div>
 
         <!-- skills -->
         <div class="well">
             <?php echo $this->Html->link('Add', ['controller' => 'Skills', 'action' => 'add', $admin['id']], ['class' => 'btn btn-xs btn-success pull-right']); ?>
             <h2>Skills</h2>
-            <?php
-            foreach ($admin['skills'] as $skill) {
-                echo '
-                	<div class="skill">
-	                	<strong>' . $skill->name . ' (' . $skill->level . ')</strong>: ' . $skill->description . '
-						' . $this->Html->link('Edit', ['controller' => 'Skills', 'action' => 'edit', $skill->id]) . ' - 
-						' . $this->Form->PostLink('Delete', ['controller' => 'Skills', 'action' => 'delete', $skill->id], ['confirm' => 'Weet je zeker dat je dit item wilt verwijderen?']) . '
-					</div>';
-            }
-            ?>
+            <table class="table">
+	            <tr>
+		            <th>Skill</th>
+		            <th>Description</th>
+		            <th>Action</th>
+	            </tr>
+	            <?php
+	            foreach ($admin['skills'] as $skill) {
+	                echo '
+	                	<tr>
+		                	<th>' . $skill->name . ' (' . $skill->level . ')</th>
+		                	<td>' . $skill->description .'</td>
+							<td class="action">'. $this->Html->link('Edit', ['controller' => 'Skills', 'action' => 'edit', $skill->id], ['class' => 'btn btn-xs btn-info']) .'
+							'. $this->Form->PostLink('Delete', ['controller' => 'Skills', 'action' => 'delete', $skill->id], ['class' => 'btn btn-xs btn-danger'],  ['confirm' => 'Weet je zeker dat je dit item wilt verwijderen?']) .'</td>
+						</tr>';
+	            }
+	            ?>
+            </table>
         </div>
 
         <!-- projects -->
@@ -98,16 +114,24 @@
         <div class="well">
             <?php echo $this->Html->link('Add', ['controller' => 'SocialLinks', 'action' => 'add', $admin['id']], ['class' => 'btn btn-xs btn-success pull-right']); ?>
             <h2>Social Links</h2>
-            <?php
-            foreach ($admin['social_links'] as $socialLink) {
-                echo '
-                <div class="social-link">
-	            	<strong><a href="' . $socialLink->url . '">' . $socialLink->name . '</a></strong>
-					' . $this->Html->link('Edit', ['controller' => 'SocialLinks', 'action' => 'edit', $admin['id']]) . ' - 
-					' . $this->Form->PostLink('Delete', ['controller' => 'SocialLinks', 'action' => 'delete', $socialLink->id], ['confirm' => 'Weet je zeker dat je dit item wilt verwijderen?']) . '
-				</div>';
-            }
-            ?>
+            <table class="table">
+	            <tr>
+		            <th>Social Media</th>
+		            <th>Link</th>
+		            <th>Action</th>
+	            </tr>
+	            <?php
+	            foreach ($admin['social_links'] as $socialLink) {
+	                echo '
+	                <tr>
+		            	<th><a href="'. $socialLink->url .'">'. $socialLink->name .'</a></th>
+		            	<td>'. $socialLink->url .'</td>
+						<td class="action">'. $this->Html->link('Edit', ['controller' => 'SocialLinks', 'action' => 'edit', $admin['id']], ['class' => 'btn btn-xs btn-info']) .'
+						'. $this->Form->PostLink('Delete', ['controller' => 'SocialLinks', 'action' => 'delete', $socialLink->id], ['class' => 'btn btn-xs btn-danger'], ['confirm' => 'Weet je zeker dat je dit item wilt verwijderen?']) .'</td>
+					</tr>';
+	            }
+	            ?>
+            </table>
         </div>
     </div>
 </div>
