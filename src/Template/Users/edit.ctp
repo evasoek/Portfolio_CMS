@@ -13,8 +13,8 @@
 						</span>
 						'. $this->Form->create($user) .'
 							'. $this->Form->input('imageURL', ['label' => 'Insert from URL']) .'
-							'. $this->Form->end() .'
-							'. $this->Form->create($user, ['type' => 'file']) .'
+						'. $this->Form->end() .'
+						'. $this->Form->create($user, ['type' => 'file']) .'
 							'. $this->Form->input('upload an image', ['type' => 'file']) .'
 							'. $this->Form->button('Save image', array('class' => 'btn btn-xs btn-info')) .'
 						'. $this->Form->end() .'
