@@ -38,6 +38,7 @@ class UsersController extends AppController {
 						'. $image .'
 						<div class="caption">
 							<h3>'. $user['firstname'] .' '. $user['lastname'] .'</h3>
+							<p>'. $user['bio'] .'</p>
 							<p><a href="'. $base_url . 'users/view/' . $user['id'] .'" class="btn btn-sm btn-primary" role="button">Bekijk portfolio</a></p>
 						</div>
 					</div>
