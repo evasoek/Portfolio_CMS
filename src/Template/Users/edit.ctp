@@ -8,23 +8,27 @@
                 	'. $image .'
                 	<div class="caption">
 						<span class="actions">
-							' . $this->Form->PostLink('Delete', ['controller' => 'Users', 'action' => 'delete_image', $user->id], ['class' => 'btn btn-xs btn-danger']) . '<hr>
-						'. $this->Form->create($user, ['type' => 'file']) .'
-						'. $this->Form->input('upload an image', ['type' => 'file']) .'
-						'. $this->Form->button(__('Save image')) .'
-						'. $this->Form->end() .'
+							' . $this->Form->PostLink('Delete', ['controller' => 'Users', 'action' => 'delete_image', $user->id], 
+																['class' => 'btn btn-xs btn-danger']) . '<hr>
 						</span>
+						'. $this->Form->create($user) .'
+							'. $this->Form->input('imageURL', ['label' => 'Insert from URL']) .'
+							'. $this->Form->end() .'
+							'. $this->Form->create($user, ['type' => 'file']) .'
+							'. $this->Form->input('upload an image', ['type' => 'file']) .'
+							'. $this->Form->button('Save image', array('class' => 'btn btn-xs btn-info')) .'
+						'. $this->Form->end() .'
 					</div>
 				</div>
 			</div>' ?>
 			
             <?= $this->Form->create($user) ?>
-            <?= $this->Form->input('username') ?>
-            <?= $this->Form->input('password') ?>
-            <?= $this->Form->input('firstname', ['label' => 'First name']) ?>
-            <?= $this->Form->input('lastname', ['label' => 'Last name']) ?>
-            <?= $this->Form->input('bio', ['type' => 'textarea', 'label' => 'Bio']) ?>
-            <?= $this->Form->button(__('Save')); ?>
+	            <?= $this->Form->input('username') ?>
+	            <?= $this->Form->input('password') ?>
+	            <?= $this->Form->input('firstname', ['label' => 'First name']) ?>
+	            <?= $this->Form->input('lastname', ['label' => 'Last name']) ?>
+	            <?= $this->Form->input('bio', ['type' => 'textarea', 'label' => 'Bio']) ?>
+	            <?= $this->Form->button(__('Save')); ?>
             <?= $this->Form->end() ?>
         </div>
     </div>

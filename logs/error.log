@@ -2648,3 +2648,90 @@ Stack Trace:
 #1 {main}
 
 
+2015-05-26 18:52:03 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE), expecting ',' or ';' in [/Applications/MAMP/htdocs/Portfolio_CMS/src/Template/Projects/add.ctp, line 9]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-05-26 18:52:03 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE), expecting ',' or ';'
+Request URL: /Portfolio_CMS/projects/add/1
+Stack Trace:
+#0 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Applications/M...', 9)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-05-26 18:52:23 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [/Applications/MAMP/htdocs/Portfolio_CMS/src/Template/Projects/add.ctp, line 7]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-05-26 18:52:23 Error: [Cake\Error\FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+Request URL: /Portfolio_CMS/projects/add/1
+Stack Trace:
+#0 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Applications/M...', 7)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-05-26 18:52:35 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [/Applications/MAMP/htdocs/Portfolio_CMS/src/Template/Projects/add.ctp, line 7]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-05-26 18:52:35 Error: [Cake\Error\FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+Request URL: /Portfolio_CMS/projects/add/1
+Stack Trace:
+#0 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Applications/M...', 7)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-05-26 18:59:44 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /Portfolio_CMS/css/bootstrap.css.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/Portfolio_CMS/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-05-26 19:00:26 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /Portfolio_CMS/css/bootstrap.css.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/Portfolio_CMS/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-05-26 19:00:45 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /Portfolio_CMS/css/bootstrap.css.map
+Stack Trace:
+#0 /Applications/MAMP/htdocs/Portfolio_CMS/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
