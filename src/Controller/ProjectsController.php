@@ -17,6 +17,11 @@ class ProjectsController extends AppController {
         $project = $this->Projects->newEntity();
         if ($this->request->is('post')) {
             $project = $this->Projects->patchEntity($project, $this->request->data);
+            
+            move_uploaded_file($this->request->data['upload_an_image']['tmp_name'], $this->webroot .'img/' . $this->request->data['upload_an_image']['name']); // upload the image
+            
+            $project['imageURL'] = $this->request->data['upload_an_image']['name']; // save URL reference to database
+            
             if ($this->Projects->save($project)) {
                 $this->Flash->success(__('The project has been saved.'));
                 return $this->redirect(['controller' => 'Users', 'action' => 'admin', $admin_id]);
@@ -35,6 +40,13 @@ class ProjectsController extends AppController {
         $project = $this->Projects->get($id);
         if ($this->request->is(['post', 'put'])) {
             $this->Projects->patchEntity($project, $this->request->data);
+            
+            var_dump($this->request->data);
+            
+            move_uploaded_file($this->request->data['upload_an_image']['tmp_name'], $this->webroot .'img/' . $this->request->data['upload_an_image']['name']); // upload the image
+            
+            $project['imageURL'] = $this->request->data['upload_an_image']['name']; // save URL reference to database
+            
             if ($this->Projects->save($project)) {
                 $this->Flash->success(__('Your project has been updated.'));
                 return $this->redirect(['controller' => 'users', 'action' => 'admin', $this->Auth->user('id')]);
@@ -64,21 +76,6 @@ class ProjectsController extends AppController {
             $this->Flash->success(__('The project has been deleted.'));
             return $this->redirect(['controller' => 'users', 'action' => 'admin', $this->Auth->user('id')]);
         }
-    }
-
-	/**
-     * Delete project image
-     */
-    public function delete_image($id) {
-	    $projectsTable = TableRegistry::get('projects');
-        $project = $projectsTable->get($id);
-        
-        $project->imageURL = null;
-        if ($projectsTable->save($project)) {
-	        $this->Flash->success(__('Your project image has been deleted.'));
-            return $this->redirect(['controller' => 'projects', 'action' => 'edit', $id]);
-        }
-        $this->Flash->error(__('Unable to delete your project image.'));
     }
 }
 

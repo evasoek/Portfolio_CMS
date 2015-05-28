@@ -8,7 +8,7 @@
             <div class="col-sm-6 col-md-4">' . '
             <div class="thumbnail">';
             if ($user->imageURL) {
-                echo '<img src="' . $user->imageURL . '" alt="Profile picture">';
+                echo '<img src="../../webroot/img/' . $user->imageURL . '" alt="Profile picture">';
             } else {
                 echo '<img src="../../webroot/img/user.gif" alt="No profule picture set">';
             }
@@ -47,7 +47,7 @@
 		<div class="col-sm-6 col-md-4">
 		<div class="thumbnail">';
                 if ($project->imageURL) {
-                    echo '<img src="' . $project->imageURL . '" alt="' . $project->name . '">';
+                    echo '<img src="../../webroot/img/' . $project->imageURL . '" alt="' . $project->name . '">';
                 } else {
                     echo '<img src="../../webroot/img/project.jpg" alt="No project picture set">';
                 }

@@ -91,11 +91,11 @@
                 echo '
 		            <div class="col-sm-6 col-md-4">
 						<div class="thumbnail">';
-                                                if ($project->imageURL) {
-							echo '<img src="' . $project->imageURL . '" alt="' . $project->name . '">';
-                                                } else {
-                                                    echo '<img src="../../webroot/img/project.jpg" alt="No project picture set">';
-                                                }
+                        if ($project->imageURL) {
+							echo '<img src="../../webroot/img/' . $project->imageURL . '" alt="' . $project->name . '">';
+                        } else {
+                        	echo '<img src="../../webroot/img/project.jpg" alt="No project picture set">';
+                        }
 						echo '<div class="caption">
 								<h3>' . $project->name . '</h3>
 								' . $project->description . '
