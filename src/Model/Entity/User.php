@@ -12,24 +12,5 @@ class User extends Entity {
     protected function _setPassword($password) {
         return (new DefaultPasswordHasher)->hash($password);
     }
-
-    public $hasMany = array(
-        'Interest' => array(
-            'className' => 'Interest',
-            'foreignKey' => 'userID' ///check
-        ),
-        'Skill' => array(
-            'className' => 'Skill',
-            'foreignKey' => 'userID',
-        ),
-        'Project' => array(
-            'className' => 'Project',
-            'foreignKey' => 'userID',
-        ),
-        'SocialLink' => array(
-            'className' => 'SocialLink',
-            'foreignKey' => 'userID',
-        )
-    );
 }
 ?>

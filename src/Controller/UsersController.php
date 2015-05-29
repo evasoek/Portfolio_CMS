@@ -25,21 +25,21 @@ class UsersController extends AppController {
         $base_url = Router::url('/', true);
 
         foreach ($users as $user) {
-	        $image = '';
-	        if ($user['imageURL']) {
-				$image = '<img src="'. $this->webroot .'img/'. $user['imageURL'] .'" alt="'. $user->name .'">';
-	        } else {
-	        	$image = '<img src="'. $this->webroot .'img/user.gif" alt="No project picture set">';
-	        }
-	        
+            $image = '';
+            if ($user['imageURL']) {
+                $image = '<img src="' . $this->webroot . 'img/' . $user['imageURL'] . '" alt="' . $user->name . '">';
+            } else {
+                $image = '<img src="' . $this->webroot . 'img/user.gif" alt="No project picture set">';
+            }
+
             $list .= '
 				<div class="col-sm-6 col-md-4">
 					<div class="thumbnail">
-						'. $image .'
+						' . $image . '
 						<div class="caption">
-							<h3>'. $user['firstname'] .' '. $user['lastname'] .'</h3>
-							<p>'. $user['bio'] .'</p>
-							<p><a href="'. $base_url . 'users/view/' . $user['id'] .'" class="btn btn-sm btn-primary" role="button">Bekijk portfolio</a></p>
+							<h3>' . $user['firstname'] . ' ' . $user['lastname'] . '</h3>
+							<p>' . $user['bio'] . '</p>
+							<p><a href="' . $base_url . 'users/view/' . $user['id'] . '" class="btn btn-sm btn-primary" role="button">Bekijk portfolio</a></p>
 						</div>
 					</div>
 				</div>';
@@ -71,11 +71,7 @@ class UsersController extends AppController {
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->data);
-            
-            move_uploaded_file($this->request->data['upload_an_image']['tmp_name'], $this->webroot .'img/' . $this->request->data['upload_an_image']['name']); // upload the image
-            
-            $user['imageURL'] = $this->request->data['upload_an_image']['name']; // save URL reference to database
-            
+
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
                 return $this->redirect(['action' => 'login']);
@@ -119,14 +115,14 @@ class UsersController extends AppController {
         }
 
         $admin = $this->Users->get($id, ['contain' => ['Interests', 'Skills', 'Projects', 'SocialLinks']]);
-        
+
         $image = '';
         if ($admin->imageURL) {
             $image = '<img src="../../webroot/img/' . $admin->imageURL . '" alt="Profile picture">';
         } else {
             $image = '<img src="../../webroot/img/user.gif" alt="No profile picture set">';
         }
-        
+
         $this->set(compact('admin'));
         $this->set('image', $image);
     }
@@ -138,25 +134,28 @@ class UsersController extends AppController {
      */
     public function edit($id = null) {
         $user = $this->Users->get($id);
-        if ($this->request->is(['post', 'put'])) {	        
+        if ($this->request->is(['post', 'put'])) {
             $this->Users->patchEntity($user, $this->request->data);
-            
-            move_uploaded_file($this->request->data['upload_an_image']['tmp_name'], $this->webroot .'img/' . $this->request->data['upload_an_image']['name']); // upload the image
-            
-            $user['imageURL'] = $this->request->data['upload_an_image']['name']; // save URL reference to database
-            
-            if ($this->Users->save($user)) {
-                $this->Flash->success(__('User has been updated.'));
-                return $this->redirect(['controller' => 'users', 'action' => 'admin', $this->Auth->user('id')]);
+            $filetype = $this->request->data['upload_an_image']['type'];
+            if ($filetype == '' | $filetype == 'image/jpeg' | $filetype == 'image/png' | $filetype == 'image/gif') { // check if filetype is correct
+                move_uploaded_file($this->request->data['upload_an_image']['tmp_name'], $this->webroot . 'img/' . $this->request->data['upload_an_image']['name']); // upload the image
+                $user['imageURL'] = $this->request->data['upload_an_image']['name']; // save URL reference to database
+                if ($this->Users->save($user)) {
+                    $this->Flash->success(__('User has been updated.'));
+                    return $this->redirect(['controller' => 'users', 'action' => 'admin', $this->Auth->user('id')]);
+                } else {
+                    $this->Flash->error(__('Unable to edit user.'));
+                }
+            } else {
+                $this->Flash->error(__('Unable to upload image, please make sure the image is in JPG, PNG or GIF format.'));
             }
-            $this->Flash->error(__('Unable to edit user.'));
         }
 
         $image = '';
         if ($user->imageURL) {
-			$image = '<img src="../../webroot/img/' . $user->imageURL . '" alt="' . $user->name . '">';
+            $image = '<img src="../../webroot/img/' . $user->imageURL . '" alt="' . $user->name . '">';
         } else {
-        	$image = '<img src="../../webroot/img/user.gif" alt="No project picture set">';
+            $image = '<img src="../../webroot/img/user.gif" alt="No project picture set">';
         }
 
         $this->set('user', $user);
@@ -172,9 +171,10 @@ class UsersController extends AppController {
         $user = $this->Users->get($id);
         if ($this->Users->delete($user)) {
             $this->Flash->success(__('The user has been deleted.'));
-            return $this->redirect(['controller' => 'users', 'action' => 'index']);
         }
+        return $this->redirect($this->Auth->logout());
     }
+
 }
 
 ?>
