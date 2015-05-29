@@ -3,13 +3,11 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
-use Cake\Event\Event;
-use Cake\Network\Exception\NotFoundException;
 
 class SocialLinksController extends AppController {
 
     /**
-     * Add Social links
+     * Add a social link
      * @param int admin ID
      */
     public function add($admin_id) {
@@ -27,7 +25,7 @@ class SocialLinksController extends AppController {
     }
 
     /**
-     * Bewerk een project
+     * Edit a social link
      * @param int ID - project id
      */
     public function edit($id = null) {
@@ -45,7 +43,7 @@ class SocialLinksController extends AppController {
     }
 
     /**
-     * Delete social link
+     * Delete a social link
      */
     public function delete($id) {
         $this->request->allowMethod(['post', 'delete']);

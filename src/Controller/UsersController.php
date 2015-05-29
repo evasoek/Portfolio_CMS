@@ -6,7 +6,6 @@ use App\Controller\AppController;
 use Cake\Event\Event;
 use Cake\Routing\Router;
 use Cake\Network\Exception\NotFoundException;
-use Cake\ORM\TableRegistry;
 
 class UsersController extends AppController {
 
@@ -17,7 +16,7 @@ class UsersController extends AppController {
 
     /**
      * Index view.
-     * Hierin worden alle gebruikers getoond
+     * Show all users
      */
     public function index() {
         $users = $this->Users->find('all');
@@ -39,7 +38,7 @@ class UsersController extends AppController {
 						<div class="caption">
 							<h3>' . $user['firstname'] . ' ' . $user['lastname'] . '</h3>
 							<p>' . $user['bio'] . '</p>
-							<p><a href="' . $base_url . 'users/view/' . $user['id'] . '" class="btn btn-sm btn-primary" role="button">Bekijk portfolio</a></p>
+							<p><a href="' . $base_url . 'users/view/' . $user['id'] . '" class="btn btn-sm btn-primary" role="button">View portfolio</a></p>
 						</div>
 					</div>
 				</div>';
@@ -49,8 +48,8 @@ class UsersController extends AppController {
     }
 
     /**
-     * Individuele user view.
-     * Hierin wordt het portfolio van een specifieke gebruiker getoond
+     * Individual user view.
+     * Show portfolio of specific user
      * @param int ID - dit is de user ID
      */
     public function view($id) {
@@ -65,7 +64,7 @@ class UsersController extends AppController {
 
     /**
      * Register view
-     * Hierin kan een user zich registreren
+     * Makes it possible to register (create user)
      */
     public function register() {
         $user = $this->Users->newEntity();
@@ -83,7 +82,7 @@ class UsersController extends AppController {
 
     /**
      * Login view.
-     * Hierin kan de gebruiker inloggen
+     * Handles the login from the user
      */
     public function login() {
         if ($this->request->is('post')) {
@@ -106,7 +105,7 @@ class UsersController extends AppController {
 
     /**
      * Admin view
-     * Hierin wordt de admin view getoond van de ingelogde gebruiker
+     * Displays the admin backend
      * @param int ID - dit is de user ID
      */
     public function admin($id) {
@@ -129,7 +128,7 @@ class UsersController extends AppController {
 
     /**
      * editUser view
-     * Hierin kan een user zijn of haar gegevens aanpassen
+     * A user can update his/her profile here
      * @param int ID - de user id
      */
     public function edit($id = null) {

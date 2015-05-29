@@ -3,13 +3,11 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
-use Cake\Event\Event;
-use Cake\Network\Exception\NotFoundException;
 
 class InterestsController extends AppController {
 
     /**
-     * Voeg een project toe aan het portfolio
+     * Add an interest to the portfolio
      * @param int admin ID
      */
     public function add($admin_id) {
@@ -27,7 +25,7 @@ class InterestsController extends AppController {
     }
 
     /**
-     * Bewerk een project
+     * Edit an interest
      * @param int ID - project id
      */
     public function edit($id = null) {
@@ -45,7 +43,7 @@ class InterestsController extends AppController {
     }
 
     /**
-     * Delete Interest
+     * Delete an interest
      */
     public function delete($id) {
         $this->request->allowMethod(['post', 'delete']);
