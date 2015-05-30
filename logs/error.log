@@ -3370,3 +3370,122 @@ Stack Trace:
 #1 {main}
 
 
+2015-05-30 18:47:51 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "projects"
+Request URL: /Portfolio_CMS/projects/edit/IMG_0167.JPG
+Stack Trace:
+#0 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/ORM/Table.php(1108): Cake\ORM\Query->firstOrFail()
+#1 /Applications/MAMP/htdocs/Portfolio_CMS/src/Controller/ProjectsController.php(51): Cake\ORM\Table->get('IMG_0167.JPG')
+#2 [internal function]: App\Controller\ProjectsController->edit('IMG_0167.JPG')
+#3 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Controller/Controller.php(405): call_user_func_array(Array, Array)
+#4 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ProjectsController))
+#6 /Applications/MAMP/htdocs/Portfolio_CMS/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-05-30 18:48:34 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "projects"
+Request URL: /Portfolio_CMS/projects/edit/IMG_0167.JPG
+Stack Trace:
+#0 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/ORM/Table.php(1108): Cake\ORM\Query->firstOrFail()
+#1 /Applications/MAMP/htdocs/Portfolio_CMS/src/Controller/ProjectsController.php(51): Cake\ORM\Table->get('IMG_0167.JPG')
+#2 [internal function]: App\Controller\ProjectsController->edit('IMG_0167.JPG')
+#3 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Controller/Controller.php(405): call_user_func_array(Array, Array)
+#4 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ProjectsController))
+#6 /Applications/MAMP/htdocs/Portfolio_CMS/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-05-30 18:48:41 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "projects"
+Request URL: /Portfolio_CMS/projects/edit/IMG_0167.JPG
+Stack Trace:
+#0 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/ORM/Table.php(1108): Cake\ORM\Query->firstOrFail()
+#1 /Applications/MAMP/htdocs/Portfolio_CMS/src/Controller/ProjectsController.php(51): Cake\ORM\Table->get('IMG_0167.JPG')
+#2 [internal function]: App\Controller\ProjectsController->edit('IMG_0167.JPG')
+#3 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Controller/Controller.php(405): call_user_func_array(Array, Array)
+#4 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ProjectsController))
+#6 /Applications/MAMP/htdocs/Portfolio_CMS/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-05-30 18:49:10 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "projects"
+Request URL: /Portfolio_CMS/projects/edit/IMG_0167.JPG
+Stack Trace:
+#0 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/ORM/Table.php(1108): Cake\ORM\Query->firstOrFail()
+#1 /Applications/MAMP/htdocs/Portfolio_CMS/src/Controller/ProjectsController.php(52): Cake\ORM\Table->get('IMG_0167.JPG')
+#2 [internal function]: App\Controller\ProjectsController->edit('IMG_0167.JPG')
+#3 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Controller/Controller.php(405): call_user_func_array(Array, Array)
+#4 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ProjectsController))
+#6 /Applications/MAMP/htdocs/Portfolio_CMS/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-05-30 18:51:22 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "projects"
+Request URL: /Portfolio_CMS/projects/edit/IMG_0167.JPG
+Stack Trace:
+#0 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/ORM/Table.php(1108): Cake\ORM\Query->firstOrFail()
+#1 /Applications/MAMP/htdocs/Portfolio_CMS/src/Controller/ProjectsController.php(52): Cake\ORM\Table->get('IMG_0167.JPG')
+#2 [internal function]: App\Controller\ProjectsController->edit('IMG_0167.JPG')
+#3 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Controller/Controller.php(405): call_user_func_array(Array, Array)
+#4 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ProjectsController))
+#6 /Applications/MAMP/htdocs/Portfolio_CMS/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-05-30 18:53:50 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "projects"
+Request URL: /Portfolio_CMS/projects/edit/IMG_0167.JPG
+Stack Trace:
+#0 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/ORM/Table.php(1108): Cake\ORM\Query->firstOrFail()
+#1 /Applications/MAMP/htdocs/Portfolio_CMS/src/Controller/ProjectsController.php(52): Cake\ORM\Table->get('IMG_0167.JPG')
+#2 [internal function]: App\Controller\ProjectsController->edit('IMG_0167.JPG')
+#3 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Controller/Controller.php(405): call_user_func_array(Array, Array)
+#4 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ProjectsController))
+#6 /Applications/MAMP/htdocs/Portfolio_CMS/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-05-30 18:54:32 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "projects"
+Request URL: /Portfolio_CMS/projects/edit/IMG_0167.JPG
+Stack Trace:
+#0 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/ORM/Table.php(1108): Cake\ORM\Query->firstOrFail()
+#1 /Applications/MAMP/htdocs/Portfolio_CMS/src/Controller/ProjectsController.php(52): Cake\ORM\Table->get('IMG_0167.JPG')
+#2 [internal function]: App\Controller\ProjectsController->edit('IMG_0167.JPG')
+#3 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Controller/Controller.php(405): call_user_func_array(Array, Array)
+#4 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ProjectsController))
+#6 /Applications/MAMP/htdocs/Portfolio_CMS/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-05-30 19:00:18 Error: [Cake\Controller\Exception\MissingActionException] Action ProjectsController::delete_image() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'ProjectsController',
+  'action' => 'delete_image',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /Portfolio_CMS/projects/delete_image/1
+Stack Trace:
+#0 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /Applications/MAMP/htdocs/Portfolio_CMS/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ProjectsController))
+#2 /Applications/MAMP/htdocs/Portfolio_CMS/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2015-05-30 19:01:26 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Webroot could not be found.
+Exception Attributes: array (
+  'class' => 'Webroot',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /Portfolio_CMS/webroot/img/project.gif
+Stack Trace:
+#0 /Applications/MAMP/htdocs/Portfolio_CMS/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+

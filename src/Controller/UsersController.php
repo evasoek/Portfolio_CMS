@@ -6,6 +6,7 @@ use App\Controller\AppController;
 use Cake\Event\Event;
 use Cake\Routing\Router;
 use Cake\Network\Exception\NotFoundException;
+use Cake\ORM\TableRegistry;
 
 class UsersController extends AppController {
 
@@ -172,6 +173,21 @@ class UsersController extends AppController {
             $this->Flash->success(__('The user has been deleted.'));
         }
         return $this->redirect($this->Auth->logout());
+    }
+    
+    /**
+     * Delete project image
+     */
+    public function delete_image($id) {
+	    $usersTable = TableRegistry::get('users');
+        $user = $usersTable->get($id);
+        
+        $user->imageURL = null;
+        if ($usersTable->save($user)) {
+	        $this->Flash->success(__('Your profile image has been deleted.'));
+            return $this->redirect(['controller' => 'users', 'action' => 'edit', $id]);
+        }
+        $this->Flash->error(__('Unable to delete your profile image.'));
     }
 
 }

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 class ProjectsController extends AppController {
 
@@ -30,13 +31,6 @@ class ProjectsController extends AppController {
             } else {
                 $this->Flash->error(__('Unable to upload image, please make sure the image is in JPG, PNG or GIF format.'));
             }
-        }
-
-        $image = '';
-        if ($project->imageURL) {
-            $image = '<img src="' . $project->imageURL . '" alt="' . $project->name . '">';
-        } else {
-            $image = '<img src="../../webroot/img/project.jpg" alt="No project picture set">';
         }
 
         $this->set('admin', $admin_id);
@@ -71,7 +65,7 @@ class ProjectsController extends AppController {
 
         $image = '';
         if ($project->imageURL) {
-            $image = '<img src="' . $project->imageURL . '" alt="' . $project->name . '">';
+            $image = '<img src="../../webroot/img/' . $project->imageURL . '" alt="' . $project->name . '">';
         } else {
             $image = '<img src="../../webroot/img/project.jpg" alt="No project picture set">';
         }
@@ -93,6 +87,21 @@ class ProjectsController extends AppController {
         } else {
             $this->Flash->error(__('Unable to delete your project.'));
         }
+    }
+    
+    /**
+     * Delete project image
+     */
+    public function delete_image($id) {
+	    $projectsTable = TableRegistry::get('projects');
+        $project = $projectsTable->get($id);
+        
+        $project->imageURL = null;
+        if ($projectsTable->save($project)) {
+	        $this->Flash->success(__('Your project image has been deleted.'));
+            return $this->redirect(['controller' => 'projects', 'action' => 'edit', $id]);
+        }
+        $this->Flash->error(__('Unable to delete your project image.'));
     }
 
 }
