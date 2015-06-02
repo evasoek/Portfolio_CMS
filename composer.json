@@ -9,6 +9,7 @@
         "cakephp/cakephp": "3.0.*-dev",
         "mobiledetect/mobiledetectlib": "2.*",
         "cakephp/migrations": "~1.0",
+		"phpunit/phpunit": "*",
         "cakephp/plugin-installer": "*"
     },
     "require-dev": {
