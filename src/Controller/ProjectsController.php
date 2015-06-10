@@ -21,14 +21,14 @@ class ProjectsController extends AppController {
                 move_uploaded_file($this->request->data['upload_an_image']['tmp_name'], $this->webroot . 'img/' . $this->request->data['upload_an_image']['name']); // upload the image
                 $project['imageURL'] = $this->request->data['upload_an_image']['name']; // save URL reference to database
             } else if ($filetype != "") {
-                $this->Flash->error(__('Unable to upload image, please make sure the image is in JPG, PNG or GIF format.'));
+                $this->Flash->error(__('Unable to create project, please make sure the image is in JPG, PNG or GIF format.'));
+                return $this->redirect(['controller' => 'Users', 'action' => 'admin', $admin_id]);
             }
             if ($this->Projects->save($project)) {
                 $this->Flash->success(__('The project has been saved.'));
                 return $this->redirect(['controller' => 'Users', 'action' => 'admin', $admin_id]);
-            } else {
-                $this->Flash->error(__('Unable to create the project.'));
             }
+            $this->Flash->error(__('Unable to create the project.'));
         }
 
 
@@ -50,14 +50,14 @@ class ProjectsController extends AppController {
                 move_uploaded_file($this->request->data['upload_an_image']['tmp_name'], $this->webroot . 'img/' . $this->request->data['upload_an_image']['name']); // upload the image
                 $project['imageURL'] = $this->request->data['upload_an_image']['name']; // save URL reference to database
             } else if ($filetype != "") {
-                $this->Flash->error(__('Unable to upload image, please make sure the image is in JPG, PNG or GIF format.'));
+                $this->Flash->error(__('Unable to edit project, please make sure the image is in JPG, PNG or GIF format.'));
+                return $this->redirect(['controller' => 'users', 'action' => 'admin', $this->Auth->user('id')]);
             }
             if ($this->Projects->save($project)) {
                 $this->Flash->success(__('Your project has been updated.'));
                 return $this->redirect(['controller' => 'users', 'action' => 'admin', $this->Auth->user('id')]);
-            } else {
-                $this->Flash->error(__('Unable to update your project.'));
             }
+            $this->Flash->error(__('Unable to update your project.'));
         }
 
 

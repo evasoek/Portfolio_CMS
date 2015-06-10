@@ -142,13 +142,13 @@ class UsersController extends AppController {
                 $user['imageURL'] = $this->request->data['upload_an_image']['name']; // save URL reference to database
             } else if ($filetype != "") {
                 $this->Flash->error(__('Unable to upload image, please make sure the image is in JPG, PNG or GIF format.'));
+                return $this->redirect(['controller' => 'users', 'action' => 'edit', $this->Auth->user('id')]);
             }
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('User has been updated.'));
                 return $this->redirect(['controller' => 'users', 'action' => 'admin', $this->Auth->user('id')]);
-            } else {
-                $this->Flash->error(__('Unable to edit user.'));
             }
+            $this->Flash->error(__('Unable to edit user.'));
         }
 
         $image = '';
